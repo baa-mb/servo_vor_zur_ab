@@ -1,11 +1,6 @@
 input.onButtonPressed(Button.A, function () {
-    if (vor) {
-        pins.servoWritePin(AnalogPin.P0, 0)
-        vor = 0
-    } else {
-        pins.servoWritePin(AnalogPin.P0, 90)
-        vor = 1
-    }
+    pins.servoWritePin(AnalogPin.P0, 0)
+    vor = 0
 })
 input.onButtonPressed(Button.AB, function () {
     pins.servoWritePin(AnalogPin.P0, 90)
@@ -29,17 +24,10 @@ radio.onReceivedString(function (receivedString) {
     }
 })
 input.onButtonPressed(Button.B, function () {
-    if (zur) {
-        pins.servoWritePin(AnalogPin.P0, 180)
-        zur = 0
-    } else {
-        pins.servoWritePin(AnalogPin.P0, 90)
-        zur = 1
-    }
+    pins.servoWritePin(AnalogPin.P0, 180)
+    zur = 0
 })
 let zur = 0
 let vor = 0
-radio.setGroup(0)
+radio.setGroup(24)
 basic.showIcon(IconNames.SmallDiamond)
-vor = 1
-zur = 1
