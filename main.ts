@@ -1,9 +1,23 @@
 input.onButtonPressed(Button.A, function () {
     pins.servoWritePin(AnalogPin.P0, 0)
-    vor = 0
+    basic.showLeds(`
+        . . # . .
+        . # # # .
+        # . # . #
+        . . # . .
+        . . # . .
+        `)
+    zur = 0
 })
 input.onButtonPressed(Button.AB, function () {
     pins.servoWritePin(AnalogPin.P0, 90)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        # # # # #
+        . . . . .
+        . . . . .
+        `)
 })
 radio.onReceivedString(function (receivedString) {
     if (receivedString == "A") {
@@ -25,9 +39,16 @@ radio.onReceivedString(function (receivedString) {
 })
 input.onButtonPressed(Button.B, function () {
     pins.servoWritePin(AnalogPin.P0, 180)
-    zur = 0
+    basic.showLeds(`
+        . . # . .
+        . . # . .
+        # . # . #
+        . # # # .
+        . . # . .
+        `)
+    vor = 0
 })
-let zur = 0
 let vor = 0
+let zur = 0
 radio.setGroup(24)
 basic.showIcon(IconNames.SmallDiamond)
